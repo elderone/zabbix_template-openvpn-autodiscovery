@@ -13,8 +13,8 @@ Please note that it not collects traffic data as the host which this template is
 UserParameter=openvpn.list.discovery[*],sudo /usr/local/bin/openvpn_discovery.sh $1
 
 # OpenVPN current sessions
-UserParameter=openvpn.conn.status[*],echo "state" | sudo /bin/socat $1 stdio |grep -q CONNECTED,SUCCESS && echo 1 || echo 0
-UserParameter=openvpn.server.clients[*],echo "load-stats" | sudo /socat $1 stdio | grep SUCCESS | cut -d= -f 2 |   cut -d, -f 1 || echo 0
+UserParameter=openvpn.conn.status[*],echo "state" | sudo /usr/bin/socat $1 stdio |grep -q CONNECTED,SUCCESS && echo 1 || echo 0
+UserParameter=openvpn.server.clients[*],echo "load-stats" | sudo /usr/bin/socat $1 stdio | grep SUCCESS | cut -d= -f 2 |   cut -d, -f 1 || echo 0
   ```
 
 2. Install socat utility
