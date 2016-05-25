@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2015-04-27T20:11:37Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -107,7 +106,7 @@
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Template App OpenVPN:openvpn.conn.status[{#CLIENT}].prev()}&lt;&gt;1</expression>
-                            <name>OpenVPN [{#CLIENT_NAME}] connection is down on {#HOSTNAME}</name>
+                            <name>OpenVPN [{#CLIENT_NAME}] connection is down on {HOST.HOST}</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
@@ -241,7 +240,7 @@
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Template App OpenVPN:openvpn.conn.status[{#SERVER}].prev()}&lt;&gt;1</expression>
-                            <name>OpenVPN [{#SERVER_NAME}] connection is down on {#HOSTNAME}</name>
+                            <name>OpenVPN [{#SERVER_NAME}] connection is down on {HOST.HOST}</name>
                             <url/>
                             <status>0</status>
                             <priority>0</priority>
